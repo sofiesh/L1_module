@@ -15,9 +15,9 @@ averageTest.add(3)
 // average.calculate() -- Expected output: 2
 
 if (averageTest.calculate() === 2) {
-    console.log('Test passed')
+  console.log('Test passed')
 } else {
-    console.log('Test failed')
+  console.log('Test failed')
 }
 
 // NPV -- Expected utput: 529.75
@@ -25,9 +25,9 @@ if (averageTest.calculate() === 2) {
 const calculateNPV = calculateNetPresentValue([100, 200, 300], 0.1)
 
 if (parseFloat(calculateNPV) === 529.75) {
-    console.log('Test passed')
+  console.log('Test passed')
 } else {
-    console.log('Test failed')
+  console.log('Test failed')
 }
 
 rankInvestmentsOnNetPresentValue()
