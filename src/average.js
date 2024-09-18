@@ -28,7 +28,7 @@ export class Average {
    * @returns {number} The average of the numbers.
    */
   calculate () {
-    const total = this.numbers.reduce((acc, number) => acc + number, 0)
-    return console.log('Average: ' + total / this.numbers.length)
+    const total = this.numbers.reduce((accumulator, number) => accumulator + number, 0)
+    return total / this.numbers.length
   }
 }
