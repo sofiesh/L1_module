@@ -7,8 +7,13 @@ The module contains calculations on:
 # Average
 Run average.add to push numbers to an array then run average.calculate to generate the average of those numbers.
 
-# NPV
-Calculates the Net Present Value (NPV) of a number of cash flows with a rate given by the user.
+# Net Present Value
+
+validateNetPresentValueInputs(): Takes two arguments, the cashFlow and rate given by the user. If the array is empty or the rate is a non-positive number less than 0 an error will be thrown.
+
+calculateNetPresentValue(): Takes two arguments (cashFlow and rate). The function calculates the Net Present Value (NPV) of a number of cash flows with a rate given by the user.
+
+rankInvestmentsOnNetPresentValue(): Takes one argument, an array of objects which represent different investments with their given cash flows and rates, and ranks the investments based on their Net Present Value in falling order.
 
 # IRR
 ..
@@ -19,4 +24,4 @@ Calculates the Net Present Value (NPV) of a number of cash flows with a rate giv
 
 
 ## Test
-..
+Manual tests can be run with node.js and are found in /test-app/testInConsole.js
