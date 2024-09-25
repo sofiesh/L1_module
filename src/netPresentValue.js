@@ -43,6 +43,7 @@ export function calculateNetPresentValue (cashFlows, rate) {
   }
 
   return parseFloat(npv).toFixed(2)
+  // return npv
 }
 
 /**

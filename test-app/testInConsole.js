@@ -53,26 +53,30 @@ console.log('Expected output: ')
 // console.log('Ranked investments: ', rankedInvestments2)
 
 
-// Test IRR -- Expected output: 0.1
-const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
-})
+// // Test IRR -- Expected output: 0.1
+// const rl = readline.createInterface({
+//     input: process.stdin,
+//     output: process.stdout
+// })
 
-function testIRRCalculation(cashFlows) {
-    rl.question('Try to guess a rate: ', (inputRate) => {
-        const rate = parseFloat(inputRate)
-        const result = calculateInternalRateOfReturn(cashFlows, rate)
+// function testIRRCalculation(cashFlows) {
+//     rl.question('Try to guess a rate: ', (inputRate) => {
+//         const rate = parseFloat(inputRate)
+//         const result = calculateInternalRateOfReturn(cashFlows, rate)
 
-        if (typeof result === 'string') {
-            console.log(result)
-            testIRRCalculation(cashFlows)
-        } else {
-            console.log('IRR is: ', (result * 100).toFixed(2) + '%', 'npv is: ', calculateNetPresentValue(cashFlows, result))
-            rl.close()
+//         if (typeof result === 'string') {
+//             console.log(result)
+//             testIRRCalculation(cashFlows)
+//         } else {
+//             console.log('IRR is: ', (result * 100).toFixed(2) + '%', 'npv is: ', calculateNetPresentValue(cashFlows, result))
+//             rl.close()
 
-        }
-    })
-}
+//         }
+//     })
+// }
 
-const calculateIRR = testIRRCalculation([-499, 200, 300, 200])
+// const calculateIRR = testIRRCalculation([-499, 200, 300, 200])
+
+const cashFlows = [-1000, 500, 300, 400];
+const irr = calculateInternalRateOfReturn(cashFlows);
+console.log(`Calculated IRR: ${irr}`);
