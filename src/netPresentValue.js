@@ -7,9 +7,9 @@
 /**
  * Function to validate the inputs for the Net Present Value calculation.
  *
- * @param {Array} cashFlows the cash flows to be considered
- * @param {number} rate the discount rate
- * @returns {boolean} true if the inputs are valid, false otherwise
+ * @param {Array} cashFlows the cash flows input by the user
+ * @param {number} rate the discount rate given by the user
+ * @returns {boolean} true if the inputs are approved, false otherwise
  */
 export function validateNetPresentValueInputs (cashFlows, rate) {
   if (!Array.isArray(cashFlows) || cashFlows.length === 0) {
