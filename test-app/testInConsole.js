@@ -41,8 +41,8 @@ const rankedInvestments = rankInvestmentsOnNetPresentValue(investments)
 console.log('Ranked investments: ', rankedInvestments)
 console.log('Expected output: ')
 
+// // Uncomment to test errorhandling
 // // Try 2: Ranking investments based on NPV where one investment has no cash flows
-// // --Expected output: Error
 // const investments2 = [
 //     { name: 'Investment A', cashFlows: [], rate: 0.1 },
 //     { name: 'Investment B', cashFlows: [150, 250, 350], rate: 0.08 },

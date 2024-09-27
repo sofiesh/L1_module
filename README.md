@@ -36,5 +36,6 @@ calculateInternalRateOfReturn(): Takes 4 arguments, cashFlows initialRate to sta
 
 
 ## Tests
-A test library exists in the directory test-app.
-* Manual tests can be run in with node.js and are found in /test-app/testInConsole.js or by updating the index.html to include the cases you want to test in the client.
+A test library for manual exists in the directory test-app.
+* Tests can be run in the terminal using commmand `npm test`. Those are found in /test-app/testInConsole.js. 
+* Tests for the client use /test-app/testApp.js and by updating the /test-app/index.html.
