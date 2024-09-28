@@ -8,7 +8,12 @@ The module contains calculations on:
 Run average.add to push numbers to an array then run average.calculate to generate the average of those numbers.
 
 ## Create Budget
-..
+This module helps with validating user input and performing calculations when creating a budget for the user. 
+
+### Functions
+validateBudgetInput(): Takes three arguments, userName, monthlyIncome and monthlyExpenses. Throws error if the arguments do not follow the requirements.
+
+createBudget(): Takes three arguments, userName, monthlyIncome and monthlyExpenses. It runs the validateBudgetInput function before performing calculations, and returns an object with the user's budget data in order to enable use of those for other parts of the module.
 
 ## Calculate Savings
 ..
