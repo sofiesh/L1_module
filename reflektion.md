@@ -3,12 +3,25 @@
 ## Kapitel 2 - meningsfulla namn
 | Namn och förklaring     | Reflektion och regler från Clean Code     |
 | ------------ | ------------ |
-| calculateSavingsPerMonth(userName, savingsGoal, currentSavings, monthsToReachGoal)<br> Funktion för att returnera objekt med parametrar som kan användas för månadsbudgetering.   | Innehåll 2   |
-| Innehåll 4   | Innehåll 5   |
-
+| **calculateSavingsPerMonth(userName, savingsGoal, currentSavings, monthsToReachGoal)**<br> Funktion för att returnera objekt med parametrar som kan användas för månadsbudgetering.   | Utifrån "Use Intention-Revealing Names" så beskriver namnet väl vad funktionen skall göra och det är bra att börja funktionsnamnet med calculate. <br><br>Namnet skulle dock kunna förkortas till "calculateMonthlySavings" istället med hänvisning till "Don’t Add Gratuitous Context".   |
+| **monthlyExpenses**<br>
+Argument i funktionerna validateBudgetInput() och createBudget() vilket är en array bestående av olika typer av utgifter   | Namnet är enkelt att uttala och förstå att det skall anges per månad och inte tex år eller kvartal (Make Meaningful Distinctions, Use Pronounceable Names). Med hänsyn till att göra det tydligt vilken datatyp det gäller, array av objekt, så skulle man kunna förbättra genom att byta namnet till tex "monthlyExpenseItems".   |
+| **validateBudgetInput (userName, monthlyIncome, monthlyExpenses)**<br>
+En funktion för att validera användarinput innan en värdena kan användas i andra funktioner.   | Här är namngivningen tydlig, det startar med ett verb och beskriver sedan vilken typ av inputdata som kommer att valideras. I nuläget exporteras denna funktion och då är det nödvändigt med ett förtydligande. Eventuellt skulle man kunna överväga att låta den vara en privat metod i en Budget-klass och då ändra namnet till validateInput. Den kan då även användas bredare och man skulle kunna undvika repetition.   |
+| **rate**<br>
+En parameter för discount rate kopplad till Net Present Value beräkningar   | För att följa regeln om "Use Intention-Revealing Names" så bör detta namn bytas till discountRate   |
+| **userInvestments**<br>
+Argument i funktionen rankInvestmentsOnNetPresentValue (userInvestments)   | Eftersom att det är en array med objekt som hänvisas till i kontexten av att ranka olika investeringar så skulle namnet kunna förbättras och vara mer kontextspecifikt.    |
 
 ## Kapitel 3 - Funktioner
-...
+| Metodnamn och länk eller kod     | Antal rader (exkl ws och kommentarer)     | Reflektion     |
+| ------------ | ------------ | ------------ |
+| **createBudget()**   | 14   | Metoden gör egentligen två saker vilket skulle kunna undvikas genom att flytta ut calculateTotalExpenses(monthlyExpenses) till en separat funktion som sedan skulle exekveras i createBudget likt validateBudgetInput.   |
+| **calculateNetPresentValue()**   | 11   | För att göra koden mer modulär och fokuserad på att endast lösa en sak skulle man kunna flytta ut felhanteringen för rate till separat funktion, tex preventInvalidRate(rate).<br><br>Det vore även lämpligt att skapa en separat funktion för beräkningen av det diskonterade värdet per kassaflöde till tex calculateDiscountedCashFlow(cashFlow, rate, period) vilket skulle förbättra med avseende på "Avoid Duplication (DRY)".   |
+| **validateBudgetInput()**   | 15   | Genom att bryta ut valideringarna till separata funktioner istället för att samla dem så skulle jag kunna minska repetition tex genom att inte validering av användarnamn behöver göras på samtliga ställen. Framgent kanske även ytterligare repetering skulle undvikas när man bygger fler på med fler delar.<br><br>Det finns även potentiell förbättring genom att plocka ut forEach-loopen till en hjälpfunktion för att undvika att valideringen görs om och om igen.   |
+| **validateSavingsInput()**   | 14   | Se ovan kommentar angående att dela upp felhanteringen per argument.   |
+| **rentOrBuy()**   | 12   | Även här skulle det kunna anses vara en förbättring att dela upp funktionen i ytterligare mindre funktioner för samtliga beräkningar och hänvisa till llitteraturen. I nuläget tycker jag dock att det inte skulle vara en förbättring men det skulle kunna förbereda för att enklare kunna bygga vidare på komplexiteten i respektive uträkning vilket är viktigt att tänka på.   |
+| **Average**   | 11   | BONUS eftersom att validerings-funktionerna liknar varandra mycket.<br><br>Här skulle en validering av arrayen kunna hjälpa till. Det var något jag inte tänkte på eftersom att denna är en så liten del av modulen. Det behövs även validering av data inuti arrayen för att kontrollera att samtliga är nummer.<br><br>För att förbättra läsbarhet skulle man kunna bryta ut reducering av tal till en hjälpfunktion enligt "Refactoring for Clarity". Det gör även att man får en abstraktionsnivå och gör det enklare att underhålla.   |
 
 ### Reflektion kring kapitel 3
 * Large functions: I det här fallet tycker jag att det gick ganska bra att hålla nere antalet kodrader. Jag har ingen funktion med fler än 20 rader. Däremot upplever jag detta svårare att hålla sig till när man sedan implementerar moduler eller bibliotek i applikationer. Då kan det vara lockande att lägga in en loop direkt istället för att skapa en ytterligare funktion/modul vid sidan av åtminstonne till en början. Jag brukar sedan arbeta för att separera ut det som går när jag "renskriver" koden. För mig handlar detta om att jag ofta skriver pseudokod och sedan lägger in de olika byggstenarna direkt. Det är för mig ett viktigt förbättringsområde som jag är ganska medveten om.
