@@ -1,7 +1,10 @@
 # Reflektion
 
 ## Kapitel 2 - meningsfulla namn
-...
+| Namn och förklaring     | Reflektion och regler från Clean Code     |
+| ------------ | ------------ |
+| Innehåll 1   | Innehåll 2   |
+| Innehåll 4   | Innehåll 5   |
 
 
 ## Kapitel 3 - Funktioner
