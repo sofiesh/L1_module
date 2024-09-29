@@ -9,6 +9,13 @@
 | **rate**<br>En parameter för discount rate kopplad till Net Present Value beräkningar   | För att följa regeln om "Use Intention-Revealing Names" så bör detta namn bytas till discountRate   |
 | **userInvestments**<br>Argument i funktionen rankInvestmentsOnNetPresentValue (userInvestments)   | Eftersom att det är en array med objekt som hänvisas till i kontexten av att ranka olika investeringar så skulle namnet kunna förbättras och vara mer kontextspecifikt.    |
 
+### Reflektion kring kapitel 2
+Jag upplever att det ibland är utmanande att balansera mellan att skapa ett väldigt tydligt och kontextuellt beskrivande namn och samtidigt hålla det kort. Jag har upplevt att det är vanligt att utvecklare i början skriver väldigt korta variabelnamn men att man lär sig att utöka dem. Jag själv upplever att jag snarare har en tendens att använda långa namn. Med tiden man utvecklas inom programmering upplever jag att man snarare bör fokusera på ordföljder snarare än längd för att öka tydlighet, läsbarhet och skapa samhörighet med andra variabler, metodnamn och tabeller.
+
+Till viss del kände jag att boken tog upp exempel som kändes orimliga att träffa på. Att man tex skulle hitta på "skojnamn" känns konstigt och jag kan inte tänka mig att moderna och seriösa utvecklare gör det nuförtiden, eventuellt påträffas det i någon gammal kodbas. Däremot att använda prefix så som "SE_" har jag sett i affärssystem och i de fallen finns översättningstabeller som decodar för förståelse vilket kan fungera för att inte skapa alltför långa namn. Prefixen är i de fallen etablerade och ofta används (så som i exemplet) landskoder som inte heller är systemspecifika.
+
+Det övergripande namnet på min modul/bibliotek har jag medvetet gjort som en förkortning för att det skulle kännas enkelt att säga och tanken är att det skall kännas välbekant och anspela på begreppet "FinTech" inom angränsande område.
+
 ## Kapitel 3 - Funktioner
 | Metodnamn och länk eller kod     | Antal rader (exkl ws och kommentarer)     | Reflektion     |
 | ------------ | ------------ | ------------ |
