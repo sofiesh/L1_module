@@ -3,12 +3,11 @@
  * It imports the Average class from the finCalc.js file and uses it to calculate the average of a list of numbers.
  */
 
-import { calculateSavingsPerMonth } from '../src/calculateSavings.js'
-import { Average, createBudget, calculateNetPresentValue, rankInvestmentsOnNetPresentValue, calculateInternalRateOfReturn } from '../src/FinCalc.js'
+import * as finCalc from '../src/finCalc.js'
 import readline from 'readline'
 
-// // TEST Average
-// const averageTest = new Average()
+// TEST Average
+// const averageTest = new finCalc.Average()
 // averageTest.add(1)
 // averageTest.add(2)
 // averageTest.add(3)
@@ -21,7 +20,7 @@ import readline from 'readline'
 //     console.log('Test failed')
 // }
 
-// // TEST createBudget
+// TEST createBudget
 // const userName = 'John Doe'
 // const monthlyIncome = 30000
 // const monthlyExpenses = [
@@ -31,21 +30,21 @@ import readline from 'readline'
 // ]
 
 // try {
-//     const budget = createBudget(userName, monthlyIncome, monthlyExpenses)
+//     const budget = finCalc.createBudget(userName, monthlyIncome, monthlyExpenses)
 //     console.log('Budget created: ', budget)
 // } catch (error) {
 //     console.log('Create Budget - Error', error.message)
 // }
 
-// // TEST calculateSavings
-// try { const savings = calculateSavingsPerMonth('John Doe', 100000, 50000, 12)
+// TEST calculateSavings
+// try { const savings = finCalc.calculateSavingsPerMonth('John Doe', 100000, 50000, 12)
 //     console.log('savings: ', savings)
 // } catch (error) {
 //     console.log('Savings - Error: ', error.message)
 // }
 
-// // TEST NPV -- Expected utput: 529.75
-// const calculateNPV = calculateNetPresentValue([100, 200, 300], 0.1)
+// TEST NPV -- Expected utput: 529.75
+// const calculateNPV = finCalc.calculateNetPresentValue([100, 200, 300], 0.1)
 
 // if (parseFloat(calculateNPV) === 529.75) {
 //     console.log('Test passed')
@@ -60,10 +59,10 @@ import readline from 'readline'
 //     { name: 'Investment C', cashFlows: [200, 300, 400], rate: 0.12 }
 // ]
 
-// const rankedInvestments = rankInvestmentsOnNetPresentValue(investments)
+// const rankedInvestments = finCalc.rankInvestmentsOnNetPresentValue(investments)
 
 // console.log('Ranked investments: ', rankedInvestments)
-// console.log('Expected output: ')
+
 
 // // // Uncomment to test errorhandling
 // // // Try 2: Ranking investments based on NPV where one investment has no cash flows
@@ -76,3 +75,15 @@ import readline from 'readline'
 // // const rankedInvestments2 = rankInvestmentsOnNetPresentValue(investments2)
 // // console.log('Ranked investments: ', rankedInvestments2)
 
+
+// // TEST rentOrBuy
+// // Expected output:
+// // {
+// //     monthlyBuyCost: 20,
+// //     monthlyRentCost: 20,
+// //     totalCostToBuy: 100,
+// //     totalCostToRent: 100,
+// //     monthsToBreakEven: 5
+// //   }
+// const rentOrBuy = finCalc.rentOrBuy(100, 20, 5)
+// console.log(rentOrBuy)

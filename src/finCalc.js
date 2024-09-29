@@ -4,6 +4,7 @@
 
 // Importing all the modules and classes.
 import { Average } from './average.js'
+import { rentOrBuy } from './rentOrBuy.js'
 import { validateBudgetInput, createBudget } from './createBudget.js'
 import { validateSavingsInput, calculateSavingsPerMonth } from './calculateSavings.js'
 import { validateNetPresentValueInputs, calculateNetPresentValue, rankInvestmentsOnNetPresentValue } from './netPresentValue.js'
@@ -11,11 +12,12 @@ import { validateNetPresentValueInputs, calculateNetPresentValue, rankInvestment
 // Exporting all public functions and classes.
 export {
   Average,
+  rentOrBuy,
   validateBudgetInput,
   createBudget,
   validateSavingsInput,
   calculateSavingsPerMonth,
   validateNetPresentValueInputs,
   calculateNetPresentValue,
-  rankInvestmentsOnNetPresentValue,
+  rankInvestmentsOnNetPresentValue
 }
