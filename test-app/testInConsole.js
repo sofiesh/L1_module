@@ -3,6 +3,7 @@
  * It imports the Average class from the finCalc.js file and uses it to calculate the average of a list of numbers.
  */
 
+import { calculateSavingsPerMonth } from '../src/calculateSavings.js'
 import { Average, createBudget, calculateNetPresentValue, rankInvestmentsOnNetPresentValue, calculateInternalRateOfReturn } from '../src/FinCalc.js'
 import readline from 'readline'
 
@@ -20,22 +21,28 @@ import readline from 'readline'
 //     console.log('Test failed')
 // }
 
-// TEST createBudget
-const userName = 'John Doe'
-const monthlyIncome = 30000
-const monthlyExpenses = [
-    { category: 'Rent', amount: 10000 },
-    { category: 'Food', amount: 4000 },
-    { category: 'Transport', amount: 1000 }
-]
+// // TEST createBudget
+// const userName = 'John Doe'
+// const monthlyIncome = 30000
+// const monthlyExpenses = [
+//     { category: 'Rent', amount: 10000 },
+//     { category: 'Food', amount: 4000 },
+//     { category: 'Transport', amount: 1000 }
+// ]
 
-try {
-    const budget = createBudget(userName, monthlyIncome, monthlyExpenses)
-    console.log('Budget created: ', budget)
-} catch (error) {
-    console.log(error.message)
-}
+// try {
+//     const budget = createBudget(userName, monthlyIncome, monthlyExpenses)
+//     console.log('Budget created: ', budget)
+// } catch (error) {
+//     console.log('Create Budget - Error', error.message)
+// }
 
+// // TEST calculateSavings
+// try { const savings = calculateSavingsPerMonth('John Doe', 100000, 50000, 12)
+//     console.log('savings: ', savings)
+// } catch (error) {
+//     console.log('Savings - Error: ', error.message)
+// }
 
 // // TEST NPV -- Expected utput: 529.75
 // const calculateNPV = calculateNetPresentValue([100, 200, 300], 0.1)
@@ -69,31 +76,3 @@ try {
 // // const rankedInvestments2 = rankInvestmentsOnNetPresentValue(investments2)
 // // console.log('Ranked investments: ', rankedInvestments2)
 
-
-// // // TEST IRR -- Expected output: 0.1
-// // const rl = readline.createInterface({
-// //     input: process.stdin,
-// //     output: process.stdout
-// // })
-
-// // function testIRRCalculation(cashFlows) {
-// //     rl.question('Try to guess a rate: ', (inputRate) => {
-// //         const rate = parseFloat(inputRate)
-// //         const result = calculateInternalRateOfReturn(cashFlows, rate)
-
-// //         if (typeof result === 'string') {
-// //             console.log(result)
-// //             testIRRCalculation(cashFlows)
-// //         } else {
-// //             console.log('IRR is: ', (result * 100).toFixed(2) + '%', 'npv is: ', calculateNetPresentValue(cashFlows, result))
-// //             rl.close()
-
-// //         }
-// //     })
-// // }
-
-// // const calculateIRR = testIRRCalculation([-499, 200, 300, 200])
-
-// const cashFlows = [-1000, 500, 300, 400];
-// const irr = calculateInternalRateOfReturn(cashFlows);
-// console.log(`Calculated IRR: ${irr}`);

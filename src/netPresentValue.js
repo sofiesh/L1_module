@@ -16,6 +16,8 @@ export function validateNetPresentValueInputs (cashFlows, rate) {
     throw new Error('Cash flows must be a non-empty array')
   }
   if (rate <= 0) {
+    console.log('Cash flows in npv', cashFlows)
+    console.log('Rate in npv', rate)
     throw new Error('Rate must be greater than 0')
   }
   return true
@@ -42,8 +44,8 @@ export function calculateNetPresentValue (cashFlows, rate) {
     npv += cashFlows[i] / Math.pow(1 + rate, i)
   }
 
-  return parseFloat(npv).toFixed(2)
-  // return npv
+  // return parseFloat(npv).toFixed(2)
+  return npv
 }
 
 /**

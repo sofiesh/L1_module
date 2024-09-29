@@ -1,5 +1,5 @@
 # My Module
-By implementing finCalc.js into your application you will get access to financial calculations support. It is a simple and user-friendly way to calculate key figures such as NPV, IRR and payback period.
+By implementing finCalc.js into your application you will get access to financial calculations support. It is a simple and user-friendly way to implement calculations in your console or client application.
 
 # About finCalc
 The module contains calculations on:
@@ -16,7 +16,13 @@ validateBudgetInput(): Takes three arguments, userName, monthlyIncome and monthl
 createBudget(): Takes three arguments, userName, monthlyIncome and monthlyExpenses. It runs the validateBudgetInput function before performing calculations, and returns an object with the user's budget data in order to enable use of those for other parts of the module.
 
 ## Calculate Savings
-..
+This module helps with validating user input and calculate how much the user must save each month in order to reach their savings goal.
+
+### Functions
+validateSavingsInput(): Takes 4 arguments, userName, savingsGoal, currentSavings, and monthsToReachGoals. Error is thrown if the arguments do not follow the requirements.
+
+calculateSavings(): Takes 4 arguments, userName, savingsGoal, currentSavings, and monthsToReachGoal. It runs the validateSavingsInput function before calculating the necessary savings per month and returns the savings per month amount.
+
 
 ## Net Present Value
 "Net present value (NPV) is the difference between the present value of cash inflows and the present value of cash outflows over a period of time. NPV is used in capital budgeting and investment planning to analyze a project's projected profitability." Source: https://www.investopedia.com/terms/n/npv.asp
@@ -28,19 +34,8 @@ calculateNetPresentValue(): Takes two arguments (cashFlow and rate). The functio
 
 rankInvestmentsOnNetPresentValue(): Takes one argument, an array of objects which represent different investments with their given cash flows and rates, and ranks the investments based on their Net Present Value in falling order.
 
-## IRR
-"IRR, or internal rate of return, is a metric used in financial analysis to estimate the profitability of potential investments. IRR is a discount rate that makes the net present value (NPV) of all cash flows equal to zero in a discounted cash flow analysis." Source: https://www.investopedia.com/terms/i/irr.asp 
-
-### Functions 
-guessRate(): Takes three arguments, currentRate, npv and adjustmentFactor, where the adjustment factor is how much the system should change the guess if the previous guess was wrong.
-
-calculateInternalRateOfReturn(): Takes 4 arguments, cashFlows initialRate to start trying from, tolerance for the convergence and maxIterations in order to prevent infinite loops.
-
-
-## Payback Period
-..
-
 # Tests
 A test library for manual exists in the directory test-app.
 * Tests can be run in the terminal using commmand `npm test`. Those are found in /test-app/testInConsole.js. 
-* Tests for the client use /test-app/testApp.js and by updating the /test-app/index.html.
+* Tests for the client use are only to visualize what can be tested and how but do not test the library completely. You find the client environment set up in /test-app/testApp.js and /test-app/index.html.
+
