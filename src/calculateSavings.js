@@ -43,6 +43,7 @@ export function calculateSavingsPerMonth (userName, savingsGoal, currentSavings,
 
   return {
     userName,
+    savingsGoal,
     savingsPerMonth: (savingsGoal - currentSavings) / monthsToReachGoal
   }
 }

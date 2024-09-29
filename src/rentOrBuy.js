@@ -7,7 +7,7 @@
 /**
  * Function to calculate whether it is better to rent or buy.
  *
- * @param {number} priceToBuy - The price for the product or service.
+ * @param {number} priceToBuy - The price for the product.
  * @param {number} priceToRentPerMonth - The monthly cost for renting.
  * @param {number} lengthOfPeriodMonths - Planned renting period in months.
  * @returns {object} An object with parameters to compare the costs of renting and buying.

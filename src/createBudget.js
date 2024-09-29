@@ -22,6 +22,13 @@ export function validateBudgetInput (userName, monthlyIncome, monthlyExpenses) {
   if (!Array.isArray(monthlyExpenses) || monthlyExpenses.length === 0) {
     throw new Error('Expenses must be an array with at least one entry.')
   }
+
+  // Validate each expense object.
+  monthlyExpenses.forEach(expense => {
+    if (typeof expense.amount !== 'number' || expense.amount <= 0) {
+      throw new Error('Monthly expenses must be an array of objects with a number amount.')
+    }
+  })
 }
 
 /**
@@ -35,23 +42,18 @@ export function validateBudgetInput (userName, monthlyIncome, monthlyExpenses) {
 export function createBudget (userName, monthlyIncome, monthlyExpenses) {
   validateBudgetInput(userName, monthlyIncome, monthlyExpenses)
 
-  // Calculate the total expenses
+  // Summarize the values of the expense object.
   let totalMonthlyExpenses = 0
 
   monthlyExpenses.forEach(expense => {
-    if (typeof expense.amount !== 'number' || expense.amount <= 0) {
-      throw new Error('Monthly expenses must be an array of objects with a number amount.')
-    }
     totalMonthlyExpenses += expense.amount
   })
-
-  const balance = monthlyIncome - totalMonthlyExpenses
 
   return {
     userName,
     monthlyIncome,
     monthlyExpenses,
     totalMonthlyExpenses,
-    balance
+    balance: monthlyIncome - totalMonthlyExpenses
   }
 }

@@ -1,10 +1,9 @@
 /**
- * This file is used to test the functions in the console.
+ * This file test functions in the console.
  * It imports the Average class from the finCalc.js file and uses it to calculate the average of a list of numbers.
  */
 
 import * as finCalc from '../src/finCalc.js'
-import readline from 'readline'
 
 // TEST Average
 // const averageTest = new finCalc.Average()
