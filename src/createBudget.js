@@ -6,9 +6,9 @@
  * Function to validate the user's input data.
  *
  * @param {string} userName - The name of the user
- * @param {number} monthlyIncome - The monthly income of the user
- * @param {object} monthlyExpenses - The monthly expenses of the user
- * @throws {Error} Will throw error if the input data is invalid.
+ * @param {number} monthlyIncome - The user's monthly income.
+ * @param {object} monthlyExpenses - The user's monthly expenses.
+ * @throws {Error} Throws error if the input data is invalid.
  */
 export function validateBudgetInput (userName, monthlyIncome, monthlyExpenses) {
   if (!userName) {
