@@ -51,7 +51,7 @@ import * as finCalc from '../src/finCalc.js'
 //     console.log('Test failed')
 // }
 
-// // Try 1: Ranking investments based on NPV
+// // Try 1: Normal case - Ranking investments based on NPV
 // const investments = [
 //     { name: 'Investment A', cashFlows: [100, 200, 300], rate: 0.1 },
 //     { name: 'Investment B', cashFlows: [150, 250, 350], rate: 0.08 },
@@ -59,7 +59,6 @@ import * as finCalc from '../src/finCalc.js'
 // ]
 
 // const rankedInvestments = finCalc.rankInvestmentsOnNetPresentValue(investments)
-
 // console.log('Ranked investments: ', rankedInvestments)
 
 
@@ -84,5 +83,10 @@ import * as finCalc from '../src/finCalc.js'
 // //     totalCostToRent: 100,
 // //     monthsToBreakEven: 5
 // //   }
+// // Try 1: Normal case
 // const rentOrBuy = finCalc.rentOrBuy(100, 20, 5)
+// console.log(rentOrBuy)
+
+// // Try 2: Error handling
+// const rentOrBuy = finCalc.rentOrBuy(100, 20, -5)
 // console.log(rentOrBuy)
