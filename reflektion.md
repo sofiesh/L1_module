@@ -3,8 +3,7 @@
 ## Kapitel 2 - meningsfulla namn
 | Namn och förklaring     | Reflektion och regler från Clean Code     |
 | ------------ | ------------ |
-| calculateSavingsPerMonth(userName, savingsGoal, currentSavings, monthsToReachGoal)<br>
-Funktion för att returnera objekt med parametrar som kan användas för månadsbudgetering.   | Innehåll 2   |
+| calculateSavingsPerMonth(userName, savingsGoal, currentSavings, monthsToReachGoal)<br> Funktion för att returnera objekt med parametrar som kan användas för månadsbudgetering.   | Innehåll 2   |
 | Innehåll 4   | Innehåll 5   |
 
 
