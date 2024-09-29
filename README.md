@@ -13,7 +13,7 @@ This module helps with validating user input and calculate how much the user mus
 ### Functions
 validateSavingsInput(): Takes 4 arguments, userName, savingsGoal, currentSavings, and monthsToReachGoals. Error is thrown if the arguments do not follow the requirements.
 
-calculateSavings(): Takes 4 arguments, userName, savingsGoal, currentSavings, and monthsToReachGoal. It runs the validateSavingsInput function before calculating the necessary savings per month and returns the savings per month amount.
+calculateSavings(): Takes 4 arguments, userName, savingsGoal, currentSavings, and monthsToReachGoal. It runs the validateSavingsInput function and returns an object with parameters to support monthly savings planning.
 
 ## Create Budget
 This module helps with validating user input and performing calculations when creating a budget for the user. 

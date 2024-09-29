@@ -11,15 +11,15 @@
  * @param {number} rate the discount rate given by the user
  * @returns {boolean} true if the inputs are approved, false otherwise
  */
-export function validateNetPresentValueInputs (cashFlows, rate) {
+export function validateNetPresentValueInputs(cashFlows, rate) {
   if (!Array.isArray(cashFlows) || cashFlows.length === 0) {
     throw new Error('Cash flows must be a non-empty array')
   }
+
   if (rate <= 0) {
-    console.log('Cash flows in npv', cashFlows)
-    console.log('Rate in npv', rate)
     throw new Error('Rate must be greater than 0')
   }
+
   return true
 }
 
@@ -30,7 +30,7 @@ export function validateNetPresentValueInputs (cashFlows, rate) {
  * @param {number} rate the discount rate
  * @returns {string} the Net Present Value as a string with two decimal places
  */
-export function calculateNetPresentValue (cashFlows, rate) {
+export function calculateNetPresentValue(cashFlows, rate) {
   validateNetPresentValueInputs(cashFlows, rate)
 
   let npv = 0
@@ -40,6 +40,7 @@ export function calculateNetPresentValue (cashFlows, rate) {
     rate = 0.0001 // Use a minimum rate to prevent division by zero
   }
 
+  // Calculate the NPV
   for (let i = 0; i < cashFlows.length; i++) {
     npv += cashFlows[i] / Math.pow(1 + rate, i)
   }
@@ -54,7 +55,7 @@ export function calculateNetPresentValue (cashFlows, rate) {
  * @param {Array} userInvestments the investments to be ranked
  * @returns {Array} the ranked investments
  */
-export function rankInvestmentsOnNetPresentValue (userInvestments) {
+export function rankInvestmentsOnNetPresentValue(userInvestments) {
   // Calculate the NPV for each investment
   userInvestments.forEach((userInvestment) => {
     userInvestment.npv = calculateNetPresentValue(userInvestment.cashFlows, userInvestment.rate)
